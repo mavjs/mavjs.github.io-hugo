@@ -1,0 +1,122 @@
+baseurl = "https://mavjs.org/"
+title = "Ye Myat Kaung (Maverick)"
+copyright = "&copy; 2016 Ye Myat Kaung (Maverick)"
+languageCode = "en-gb"
+theme = "academic"
+
+# Enable comments by entering your Disqus shortname
+#disqusShortname = "spf13"
+
+# Enable analytics by entering your Google Analytics tracking ID
+#googleAnalytics = ""
+
+
+[params]
+  name = "Ye Myat Kaung"
+  role = "Computer Security Enthusiast"
+  avatar = "portrait.jpg"
+  email = "mavjs01@gmail.com"
+
+  # Date format (refer to Go's date format: http://flippinggodateformat.com )
+  #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
+  date_format = "Mon, Jan 2, 2006"
+
+  # Enable global LaTeX math rendering? If false, you can enable it locally on a per page basis.
+  math = false
+
+  # Enable native social sharing buttons?
+  sharing = true
+
+  # Link custom CSS and JS assets (relative to /static/css and /static/js respectively)
+  custom_css = []
+  custom_js  = []
+
+  # Biography section.
+  # Section will only be displayed if `content/home/about.md` exists.
+  [params.about]
+    interests = ["Free/Libre open source software", "Privacy", "Digital Security", "Empowering people with technology"]
+    str_interests = "Interests"
+    str_education = "Education"
+
+    [[params.about.education]]
+      course = "BSc in Information Technology"
+      institution = "Staffordshire University"
+      year = 2014
+
+    [[params.about.education]]
+      course = "BSc in Information Technology"
+      institution = "Asia Pacific University of Technology"
+      year = 2014
+
+  # Posts section.
+  # Section will only be displayed if there are posts in `content/post/`.
+  [params.posts]
+    count = 5
+    title = "Recent Posts"
+    subtitle = ""
+    str_all = "More Posts"
+    str_read_more = "Read more"
+
+  # Projects section.
+  # Section will only be displayed if there are projects in `content/project/`.
+  [params.projects]
+    title = "Projects"
+    subtitle = ""
+
+  # Contact section.
+  [params.contact]
+    enable = true
+    title = "Contact"
+    subtitle = ""
+    autolink = true  # Automatically link email and phone?
+    # autolink = false
+
+  # Social/Academic Networking
+  #
+  # Icon pack "fa" includes the following social network icons:
+  #   twitter, weibo, linkedin, github, facebook, pinterest, google-plus, youtube, instagram, soundcloud
+  #   For email icon, use "fa" icon pack, "envelope" icon, and "mailto:your@email.com" as the link.
+  #   Full list: https://fortawesome.github.io/Font-Awesome/icons/
+  #
+  # Icon pack "ai" includes the following academic network icons:
+  #   google-scholar, arxiv, orcid, researchgate, mendeley
+  #   Full list: https://jpswalsh.github.io/academicons/
+
+  [[params.social]]
+    icon = "linkedin"
+    icon_pack = "fa"
+    link = "//linkedin.com/in/mavjs"
+
+  [[params.social]]
+    icon = "twitter"
+    icon_pack = "fa"
+    link = "//twitter.com/MavJS"
+
+  [[params.social]]
+    icon = "github"
+    icon_pack = "fa"
+    link = "//github.com/mavjs"
+
+
+# Navigation Links
+#   The weight parameter defines the order that the links will appear in.
+
+[[menu.main]]
+  name = "Home"
+  url = "#top"
+  weight = 1
+
+[[menu.main]]
+  name = "Posts"
+  url = "post/"
+  weight = 3
+
+[[menu.main]]
+  name = "Projects"
+  url = "#projects"
+  weight = 4
+
+[[menu.main]]
+  name = "Contact"
+  url = "#contact"
+  weight = 6
