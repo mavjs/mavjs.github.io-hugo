@@ -1,5 +1,4 @@
 all: build
-	./deploy.sh
 
 build:
 	hugo
@@ -16,4 +15,3 @@ update:
 # for rebuild, ignore this
 init:
 	git submodule add -b master  https://github.com/gcushen/hugo-academic.git themes/academic
-	git submodule add -b master git@github.com:mavjs/mavjs.github.io.git public

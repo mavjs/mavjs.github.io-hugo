@@ -8,11 +8,8 @@ weight = 0
 
 # Biography
 
-Ye Myat Kaung (more commonly known as **Maverick**) is a highly motivated and
-passionate free and open source software (FOSS) advocate. He is interested in software
-development, computer system administration and management, digital security and
-data privacy. He is also an aspiring hacker and software engineer.
+Ye Myat **"Maverick"** Kaung is a highly motivated individual with a passion for
+security and open source software. Also an aspiring hacker and software
+engineer.
 
-His passion includes diving into highly technical topics and then helping users
-understand those highly technical topics by giving bite-sized digestable examples. 
-He is also very passionate about continuity of knowledge through sharing and teaching.
+Interested in software engineering, security (penetration testing, secure coding) and system administration.
