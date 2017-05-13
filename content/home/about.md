@@ -1,9 +1,28 @@
 +++
 date = "2016-04-20T00:00:00"
 draft = false
-title = "about"
-section_id = 0
-weight = 0
+widget = "about"
+weight = 1
+
+# Biography section.
+# Section will only be displayed if `content/home/about.md` exists.
+[interests]
+    interests = [
+        "Free/Libre open source software",
+        "Privacy",
+        "Digital Security",
+        "Empowering people with technology"
+    ]
+
+[[education.courses]]
+    course = "BSc in Information Technology"
+    institution = "Staffordshire University"
+    year = 2014
+
+[[education.courses]]
+    course = "BSc in Information Technology"
+    institution = "Asia Pacific University of Technology"
+    year = 2014
 +++
 
 # Biography
