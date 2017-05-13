@@ -2,6 +2,10 @@
 title = "Fedora 21 Workstation HiDPI on retina macbook pro"
 date = "2015-04-06T02:10:00"
 tags = ["fedora", "macbook", "hidpi"]
+summary="""
+Configuration options to get some third-party apps working nicely with HiDPI on
+Fedora 21
+"""
 +++
 
 I've been happily using F21 since it's release announcement on [Fedora Magazine](https://fedoramagazine.org/announcing-fedora-21),especially with the support for high resolution displays (HiDPI) since I've been converted back to using Fedora full time on my retina macbook pro. Although most of the GNOME apps work on my retina display, browsers and third-party apps are still lacking. Web pages' fonts seems too tiny and I've to zoom in on them to see them better all the time.

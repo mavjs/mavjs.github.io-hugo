@@ -2,6 +2,10 @@
 title = "Setting up searx  with gunicorn and supervisor"
 date = "2014-09-19T21:09:00"
 tags = ["gunicorn", "metasearch engine", "privacy", "python", "supervisord"]
+summary="""
+Steps to get searx (a privacy-respecting metasearch engine) working with
+gunicorn and supervisord
+"""
 +++
 
 ## What is searx?
