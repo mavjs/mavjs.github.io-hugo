@@ -84,6 +84,10 @@ defaultContentLanguageInSubdir = false
     icon_pack = "fa"
     link = "//github.com/mavjs"
 
+  # disclaimer
+  [params.disclaimer]
+    enable = true
+    title = "Disclaimer"
 
 # Navigation Links
 #   The weight parameter defines the order that the links will appear in.
@@ -106,4 +110,9 @@ defaultContentLanguageInSubdir = false
 [[menu.main]]
   name = "Contact"
   url = "#contact"
+  weight = 5
+
+[[menu.main]]
+  name = "Disclaimer"
+  url = "#disclaimer"
   weight = 6
