@@ -1,6 +1,6 @@
 baseurl = "https://www.mavjs.org/"
 title = "Maverick Kaung"
-copyright = "&copy; 2017 Ye Myat "Maverick" Kaung"
+copyright = "&copy; 2017 Ye Myat \"Maverick\" Kaung"
 theme = "academic"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
