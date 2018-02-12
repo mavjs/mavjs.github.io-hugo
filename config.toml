@@ -1,6 +1,6 @@
 baseurl = "https://www.mavjs.org/"
-title = "Ye Myat Kaung (Maverick)"
-copyright = "&copy; 2017 Ye Myat Kaung (Maverick)"
+title = "Maverick Kaung"
+copyright = "&copy; 2017 Ye Myat "Maverick" Kaung"
 theme = "academic"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
@@ -15,7 +15,7 @@ defaultContentLanguageInSubdir = false
   hrefTargetBlank = true
 
 [params]
-  name = "Ye Myat Kaung"
+  name = "Maverick Kaung"
   role = "Security Enthusiast"
   avatar = "portrait.jpg"
   email = "mavjs01@gmail.com"
