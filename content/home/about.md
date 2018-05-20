@@ -1,8 +1,8 @@
 +++
-date = "2016-04-20T00:00:00"
-draft = false
 widget = "about"
-weight = 1
+active = true
+date = "2016-04-20T00:00:00"
+weight = 5
 
 # Biography section.
 # Section will only be displayed if `content/home/about.md` exists.
