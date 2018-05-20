@@ -8,9 +8,11 @@ weight = 1
 # Section will only be displayed if `content/home/about.md` exists.
 [interests]
     interests = [
+        "Threat Detection/Hunting",
+        "Cyber Security",
+        "Secure Coding",
         "Free/Libre open source software",
         "Privacy",
-        "Digital Security",
         "Empowering people with technology"
     ]
 
@@ -30,5 +32,3 @@ weight = 1
 Ye Myat **"Maverick"** Kaung is a highly motivated individual with a passion for
 security and open source software. Also an aspiring hacker and software
 engineer.
-
-Interested in software engineering, security (penetration testing, secure coding) and system administration.
