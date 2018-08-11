@@ -1,6 +1,6 @@
 +++
 title = "Swap Control and Caps Lock on Windows"
-date = "2018-08-11T19:12:00"
+date = 2018-08-11T19:12:00
 tags = ["Windows", "Keyboard", "Powershell"]
 +++
 Whenever I finish installing a fresh operating system, be it Windows or a Linux distribution, I always remap ctrl and caps lock on my keyboard.

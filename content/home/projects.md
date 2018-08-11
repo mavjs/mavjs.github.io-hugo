@@ -3,7 +3,7 @@
 # Note: this widget will only display if `content/project/` contains projects.
 widget = "projects"
 active = true
-date = "2016-04-20T00:00:00"
+date = 2016-04-20T00:00:00
 
 title = "Projects"
 subtitle = ""
@@ -28,18 +28,18 @@ filter_default = 0
   
 [[filter]]
   name = "golang"
-  tag = ".go"
+  tag = "go"
 
 [[filter]]
   name = "API"
-  tag = ".API"
+  tag = "API"
 
 [[filter]]
   name = "Security"
-  tag = ".secdev"
+  tag = "secdev"
 
 [[filter]]
   name = "Django"
-  tag = ".Django"
+  tag = "Django"
 
 +++

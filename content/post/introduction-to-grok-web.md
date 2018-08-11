@@ -1,6 +1,6 @@
 +++
 title = "Introduction to Grok web application framework @ UCTI"
-date = "2012-09-09T06:34:00"
+date = 2012-09-09T06:34:00
 tags = ["Plone", "Python", "Zope"]
 +++
 

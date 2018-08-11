@@ -1,6 +1,6 @@
 +++
 title = "Spreading Fedora Love - One At A Time"
-date = "2012-04-30T03:32:00"
+date = 2012-04-30T03:32:00
 tags = ["Fedora", "UCTI"]
 +++
 

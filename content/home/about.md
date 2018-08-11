@@ -1,7 +1,7 @@
 +++
 widget = "about"
 active = true
-date = "2016-04-20T00:00:00"
+date = 2016-04-20T00:00:00
 weight = 5
 
 # Biography section.

@@ -1,6 +1,6 @@
 +++
 title = "Getting Python Libraries Installed The Normal Way on Windows"
-date = "2012-05-10T00:38:00"
+date = 2012-05-10T00:38:00
 tags = ["Python", "Windows"]
 +++
 

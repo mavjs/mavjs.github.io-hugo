@@ -1,6 +1,6 @@
 +++
 title = "Running GUI apps from Fedora Docker containers"
-date = "2015-05-10T15:50:00"
+date = 2015-05-10T15:50:00
 tags = ["Fedora", "Docker", "lxc"]
 +++
 

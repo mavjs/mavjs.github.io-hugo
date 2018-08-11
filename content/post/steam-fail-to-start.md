@@ -1,6 +1,6 @@
 +++
 title = "Steam fail to start"
-date = "2013-09-14T04:43:00"
+date = 2013-09-14T04:43:00
 tags = ["Steam"]
 +++
 

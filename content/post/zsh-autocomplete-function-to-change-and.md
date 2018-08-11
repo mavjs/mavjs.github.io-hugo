@@ -1,6 +1,6 @@
 +++
 title = "Zsh Autocomplete Function to change and auto complete directories' name"
-date = "2012-10-27T05:01:00"
+date = 2012-10-27T05:01:00
 tags = ["Zsh"]
 +++
 

@@ -1,6 +1,6 @@
 +++
 title = "Fedora 21 Workstation HiDPI on retina macbook pro"
-date = "2015-04-06T02:10:00"
+date = 2015-04-06T02:10:00
 tags = ["fedora", "macbook", "hidpi"]
 summary="""
 Configuration options to get some third-party apps working nicely with HiDPI on

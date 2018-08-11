@@ -1,6 +1,6 @@
 +++
 title = "Blogger CLI Posting Tip"
-date = "2012-04-21T15:01:00"
+date = 2012-04-21T15:01:00
 +++
 
 What do you do when you're a geek who uses Fedora, needs to write blog posts on blogspot.com and like only command line based clients?

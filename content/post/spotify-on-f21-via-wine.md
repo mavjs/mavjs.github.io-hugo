@@ -1,6 +1,6 @@
 +++
 title = "Spotify on Fedora 21 via wine"
-date = "2015-04-06T00:56:00"
+date = 2015-04-06T00:56:00
 tags = ["Fedora", "wine"]
 draft = true
 +++

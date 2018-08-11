@@ -1,6 +1,6 @@
 +++
 title = "Compiling Voxelands on Mac OSX"
-date = "2014-09-26T22:25:00"
+date = 2014-09-26T22:25:00
 tags = ["game", "macosx", "voxelands"]
 summary="Steps to get Voxelands - the Fun-Focused Free Software Voxel World Game; working on Mac OS X"
 +++ 
