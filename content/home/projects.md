@@ -31,6 +31,10 @@ filter_default = 0
   tag = "go"
 
 [[filter]]
+  name = "Dota2"
+  tag = "Dota2"
+
+[[filter]]
   name = "API"
   tag = "API"
 
