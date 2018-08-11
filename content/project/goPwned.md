@@ -4,8 +4,7 @@ title = "goPwned"
 summary = "a golang library for haveibeenpwned.com API"
 image_preview = ""
 math = false
-tags = ['go', 'secdev']
+tags = ["go", "secdev"]
 external_link = "https://github.com/mavjs/goPwned"
-
 +++
 
