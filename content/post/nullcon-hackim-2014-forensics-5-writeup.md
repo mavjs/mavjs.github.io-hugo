@@ -1,7 +1,7 @@
 +++
 title = "[Nullcon HackIM 2014] Forensics 5 Writeup"
 date = 2014-01-27T15:24:00
-tags = ["writeups", "HackIM2014", "CTF", "forensics"]
+tags = []
 +++
 
 I play security competitions called Capture The Flag (CTF) with a

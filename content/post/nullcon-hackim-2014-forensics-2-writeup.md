@@ -1,7 +1,7 @@
 +++
 title = "[Nullcon HackIM 2014] Forensics 2 Writeup"
 date = 2014-01-31T09:27:00
-tags = ["writeups", "HackIM2014", "CTF", "forensics"]
+tags = []
 +++
 
 **Points: 200**

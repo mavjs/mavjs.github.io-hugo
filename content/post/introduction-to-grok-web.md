@@ -1,7 +1,7 @@
 +++
 title = "Introduction to Grok web application framework @ UCTI"
 date = 2012-09-09T06:34:00
-tags = ["Plone", "Python", "Zope"]
+tags = []
 +++
 
 Hey folks, we, the [Fedora Malaysia](http://fedora.my) community in conjunction with UCTI Free & Open Source Software SIG, have planned for an introductory workshop on [Grok](http://grok.zope.org), a web application framework. It uses the [Zope Toolkit (ZTK)](http://docs.zope.org/zopetoolkit).

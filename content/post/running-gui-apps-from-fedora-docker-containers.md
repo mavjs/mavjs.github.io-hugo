@@ -1,7 +1,7 @@
 +++
 title = "Running GUI apps from Fedora Docker containers"
 date = 2015-05-10T15:50:00
-tags = ["Fedora", "Docker", "lxc"]
+tags = []
 +++
 
 After reading [Jessie Frazelle](https://twitter.com/jessfraz)'s [Docker Containers on the Desktop](https://blog.jessfraz.com/post/docker-containers-on-the-desktop) post I was quite interested in making some Fedora image based docker containers for some apps I want to use.<!--more-->

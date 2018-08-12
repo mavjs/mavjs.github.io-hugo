@@ -1,7 +1,7 @@
 +++
 title = "World of Warcraft on Fedora 20 via wine"
 date = 2014-11-14T14:26:00
-tags = ["game", "Fedora", "wine"]
+tags = []
 summary="""
 Install steps to get World of Warcraft on Fedora 20 working via wine.
 """

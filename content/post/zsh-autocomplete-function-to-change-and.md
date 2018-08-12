@@ -1,7 +1,7 @@
 +++
 title = "Zsh Autocomplete Function to change and auto complete directories' name"
 date = 2012-10-27T05:01:00
-tags = ["Zsh"]
+tags = []
 +++
 
 About some weeks ago, I was trying to find a way to alias my favourite directory (~/Programming/Pythons) in zsh, and it should show me the directories contained inside it. But aliasing doesn't work, except to ```cd``` me to that directory. Or a function can help me get into the directories inside ~/Programming/Pythons but I'd have to type out the directories' name manually. That wasn't an option either. 

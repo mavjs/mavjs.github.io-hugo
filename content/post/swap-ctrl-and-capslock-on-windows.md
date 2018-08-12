@@ -1,7 +1,7 @@
 +++
 title = "Swap Control and Caps Lock on Windows"
 date = 2018-08-11T19:12:00
-tags = ["Windows", "Keyboard", "Powershell"]
+tags = []
 +++
 Whenever I finish installing a fresh operating system, be it Windows or a Linux distribution, I always remap ctrl and caps lock on my keyboard.
 As I use the `Control` key a lot more than `Caps Lock`, I like having the former on the same line as my home row keys. So, this is what I normally do on Windows.

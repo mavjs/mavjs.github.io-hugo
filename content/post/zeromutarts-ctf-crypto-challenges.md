@@ -1,7 +1,7 @@
 +++
 title = "Zeromutarts CTF Crypto Challenges"
 date = 2014-01-27T15:08:00
-tags = ["writeups", "zeromutarts", "CTF", "crypto"]
+tags = []
 math = true
 +++
 

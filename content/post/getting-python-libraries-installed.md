@@ -1,7 +1,7 @@
 +++
 title = "Getting Python Libraries Installed The Normal Way on Windows"
 date = 2012-05-10T00:38:00
-tags = ["Python", "Windows"]
+tags = []
 +++
 
 I've been using GNU/Linux distributions for almost 2 years and with [Fedora](https://fedoraproject.org) for about ~7-8 months. 
