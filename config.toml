@@ -153,6 +153,11 @@ enableGitInfo = false
   weight = 3
 
 [[menu.main]]
+  name = "Photos"
+  url = "https://photos.mavjs.org"
+  weight = 4
+
+[[menu.main]]
   name = "Projects"
   url = "#projects"
   weight = 4
@@ -160,12 +165,12 @@ enableGitInfo = false
 [[menu.main]]
   name = "Contact"
   url = "#contact"
-  weight = 5
+  weight = 6
 
 [[menu.main]]
   name = "Disclaimer"
   url = "#disclaimer"
-  weight = 6
+  weight = 7
 
 # Search.
 [params.search]
