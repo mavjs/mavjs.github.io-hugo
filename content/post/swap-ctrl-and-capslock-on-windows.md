@@ -35,11 +35,11 @@ As I use the `Control` key a lot more than `Caps Lock`, I like having the former
 
 This can also be put into a powershell script instead of manually editing the registry key as above. See the code below:
 ```
-$hexified = "00,00,00,00,00,00,00,00,03,00,00,00,1d,00,3a,00,3a,00,1d,00,00,00,00,00".Spli(",") | % { "0x$_"};
+$hexified = "00,00,00,00,00,00,00,00,03,00,00,00,1d,00,3a,00,3a,00,1d,00,00,00,00,00".Split(",") | % { "0x$_"};
 
 $kbLayout = 'HKLM:\SYSTEM\CurrentControlSet\Control\Keyboard Layout';
 
-New-ItemProperty -Path $kbLayout -Name "Scancode Map" -PropertyType Binary - Value ([byte[]]$hexified)
+New-ItemProperty -Path $kbLayout -Name "Scancode Map" -PropertyType Binary -Value ([byte[]]$hexified)
 ```
 
 ### References
@@ -47,3 +47,7 @@ Kudos to these answers on Stackoverflow.
 
 * https://superuser.com/a/1264295
 * https://superuser.com/a/997448
+
+### Updates
+* added `t` in `.Spli(",")` and removed space infront of `- Value` (Kudos to [@syk0saje](https://twitter.com/syk0saje) for spotting the typos.)
+
