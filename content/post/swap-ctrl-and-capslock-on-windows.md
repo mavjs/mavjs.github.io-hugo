@@ -49,5 +49,5 @@ Kudos to these answers on Stackoverflow.
 * https://superuser.com/a/997448
 
 ### Updates
-* added `t` in `.Spli(",")` and removed space infront of `- Value` (Kudos to [@syk0saje](https://twitter.com/syk0saje) for spotting the typos.)
+* added `t` in `.Spli(",")` and removed the space inbetween `- Value` (Kudos to [@syk0saje](https://twitter.com/syk0saje) for spotting the typos.)
 
