@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/mavjs
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://mavjs.org
+  * I am mavjs (https://keybase.io/mavjs) on keybase.
+  * I have a public key ASCHb5ZWoX_WG9NHifBIGRpjXFg3iWz_qGBRUXtcMJzNkAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120e24ec9ec2d57a894e00d0fd541fb5c5722b40dd991089b820f69f662cdcd85b60a",
+      "host": "keybase.io",
+      "kid": "0120876f9656a17fd61bd34789f048191a635c5837896cffa86051517b5c309ccd900a",
+      "uid": "6f67635f3aca6b66a0af020d422d3019",
+      "username": "mavjs"
+    },
+    "merkle_root": {
+      "ctime": 1568308382,
+      "hash": "272b48e6020bf949d1fa5eb8b822934f3068a5b294f196ce9db9458165ce6596d7878d4d9a48119c7e7f091015df2ee1f64d442d66229bf8790ef19635f25891",
+      "hash_meta": "a3cef306d94f651c949bd3a2ca540a9191ca917d9ea44687946839ac1c8dd0ac",
+      "seqno": 7008064
+    },
+    "service": {
+      "entropy": "iMceFyIKr5RoZzWbWVF9G7hf",
+      "hostname": "mavjs.org",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.4.1"
+  },
+  "ctime": 1568308393,
+  "expire_in": 504576000,
+  "prev": "36ee0c532bc1dfc309a9b47dece65815b8f3e53563020ad89d314a386dbe69ea",
+  "seqno": 33,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgh2+WVqF/1hvTR4nwSBkaY1xYN4ls/6hgUVF7XDCczZAKp3BheWxvYWTESpcCIcQgNu4MUyvB38MJqbR97OZYFbjz5TVjAgrYnTFKOG2+aerEIADU1jiJlzmC0GOp2bbRnVeOCW55vHX7TRDY+gpVpB3vAgHCo3NpZ8RAp6/ndxqRnAv9aNBHPveg5vjlHnaAjUbvrU+doxXxWVLAVLAFV9z4y2upa9ZQrZ51yzo8hn2DDUs2SdoDDn1/BKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIFq7A9ac+/d3JCbNr2VOCMp5HBuLVHdwDrtAMth6icPjo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/mavjs
+
+==================================================================
