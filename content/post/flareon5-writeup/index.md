@@ -1,26 +1,18 @@
-+++
-title = "2018 FLARE-On Challenges Writeup"
-date = 2018-10-08T19:42:33+02:00
-draft = false
+---
+title: '2018 FLARE-On Challenges Writeup'
+date: 2018-10-08T19:42:33+02:00
+draft: false
 
-# Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
-authors = []
+tags:
+- Reverse Engineering
 
-# Tags and categories
-# For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
-tags = ["Reverse Engineering"]
-categories = []
-
-# Featured image
-# Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
-# Use `caption` to display an image caption.
-#   Markdown linking is allowed, e.g. `caption = "[Image credit](http://example.org)"`.
-# Set `preview` to `false` to disable the thumbnail in listings.
-[header]
-image = "0-flareon.png"
-caption = "Hackers Gonna Hack"
-preview = true
-+++
+header:
+    image: "0-flareon.png"
+    caption: "[Hackers Gonna Hack](http://flare-on.com)"
+# image:
+#    placement: 3
+#    caption: "Photo by [Bernard Hermant](https://unsplash.com/@bernardhermant) on [Unsplash](https://unsplash.com)"
+---
 I decided to participate in this year's edition of [FLARE-On challenge](https://www.fireeye.com/blog/threat-research/2018/08/announcing-the-fifth-annual-flare-on-challenge.html). It is made by the fine folks from FireEye Labs Advanced Reverse Engineering (FLARE) team.
 
 I wanted to see how far I could go. I did not set any goals nor did I took it as seriously as I would have liked.
