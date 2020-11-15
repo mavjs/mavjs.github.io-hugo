@@ -6,12 +6,15 @@ draft: false
 tags:
 - Reverse Engineering
 
-header:
-    image: "0-flareon.png"
-    caption: "[Hackers Gonna Hack](http://flare-on.com)"
 # image:
 #    placement: 3
 #    caption: "Photo by [Bernard Hermant](https://unsplash.com/@bernardhermant) on [Unsplash](https://unsplash.com)"
+image:
+  placement: 3
+  caption: "FlareOn 5 Main Header Logo"
+  focal_point: ""
+  preview_only: true
+  alt_text: FlareOn 5 header logo.
 ---
 I decided to participate in this year's edition of [FLARE-On challenge](https://www.fireeye.com/blog/threat-research/2018/08/announcing-the-fifth-annual-flare-on-challenge.html). It is made by the fine folks from FireEye Labs Advanced Reverse Engineering (FLARE) team.
 
