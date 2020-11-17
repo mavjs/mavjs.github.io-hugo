@@ -1,9 +1,9 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "Contributing to Kali Linux using a toolbox on Fedora"
+title: "Contributing to Kali Linux using toolbox on Fedora"
 subtitle: ""
-summary: "A Fedora user uses a toolbox container to contribute a patch to Kali Linux package."
+summary: "A Fedora user uses toolbox container to contribute a patch to Kali Linux package."
 authors: []
 tags: []
 categories: []
