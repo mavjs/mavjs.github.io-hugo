@@ -3,7 +3,7 @@
 
 title: "YAML linting and schema validation"
 subtitle: ""
-summary: "Author could not use [Sigma](https://github.com/SigmaHQ/sigma) (a generic signature format for SIEM), so they came up with their own format and this post details YAML linting and schema validation adventure."
+summary: "Author could not use [Sigma](https://github.com/SigmaHQ/sigma) (a generic signature format for SIEM), so they came up with their own format. This post details that YAML linting and schema validation adventure."
 authors: []
 tags: []
 categories: []
