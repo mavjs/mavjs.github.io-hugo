@@ -31,7 +31,7 @@ projects: []
 # What is Atomic Red Team?
 > Atomic Red Team&trade; is a library of simple tests mapped to the MITRE ATT&CK&reg; framework that every security team can execute to test their defenses. Tests are focused, have few dependencies, and are defined in a structured format that can be used by automation frameworks.[^1] - RedCanaryCo
 
-Atomic Red Team is the main testing repository in the Atomic Family, first created by the esteemed folks from Red Canary.[^2] The Atomic Family also provides a couple of utility tools to help execute the tests, namely:
+Atomic Red Team is the main testing repository in the Atomic Family, created by the esteemed folks from Red Canary.[^2] The Atomic Family also provides a couple of utility tools to help execute the tests, namely:
 * Invoke-AtomicRedTeam - A PowerShell-based framework for developing and executing atomic tests.[^3]
 * AtomicTestHarnesses - A PowerShell module for executing many variations of an attack technique at once.[^4]
 * Chain Reactor - A tool for testing detection and response coverage on Linux machines.[^5]
