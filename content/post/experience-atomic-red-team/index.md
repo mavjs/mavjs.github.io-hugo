@@ -42,6 +42,7 @@ In this post it will only be about Atomic Red Team - the library of tests & `Inv
 Security monitoring involves collection and analysis of information to detect suspicious behaviour and or unauthorised system changes on an organization's network. This includes defining what types of behaviour and changes should trigger (an) alert(s), and what actions are to be taken.
 
 Think of it this way, just because an organization has put up gates around the building and also have guards, does not mean other essential entrances are without locks. There would still be regular maintenance on the physical structures of the gates, door locks, reviewing of policies and background checks of guards, etc.
+
 Similarly here, just because there are network and host security monitoring setup with triggers and actions for alerts defined, the work does not stop here. The organization will have to stay up to date with new vulnerabilities, techniques and regularly reassess whether those triggers and or actions are enough.
 
 This is where a test framework like Atomic Red Team comes in, especially, for organizations that cannot spend a lot of resources around research on vulnerabilities and techniques, can make use of such a test framework to help in developing more security monitoring alert triggers, use cases or to create tests for already deployed triggers to make sure those work as intended regularly.
