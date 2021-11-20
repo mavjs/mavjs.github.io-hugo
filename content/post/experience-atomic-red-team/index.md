@@ -36,7 +36,15 @@ Atomic Red Team is the main testing repository in the Atomic Family, first creat
 * AtomicTestHarnesses - A PowerShell module for executing many variations of an attack technique at once.[^4]
 * Chain Reactor - A tool for testing detection and response coverage on Linux machines.[^5]
 
-In this post we will only talk about Atomic Red Team - the library of tests & `Invoke-AtomicRedTeam` - the powershell framework to run the tests.
+In this post it will only be about Atomic Red Team - the library of tests & `Invoke-AtomicRedTeam` - the powershell framework to run the tests.
+
+## Security Monitoring and role of testing defenses
+Security monitoring involves collection and analysis of information to detect suspicious behaviour and or unauthorised system changes on an organization's network. This includes defining what types of behaviour and changes should trigger (an) alert(s), and what actions are to be taken.
+
+Think of it this way, just because an organization has put up gates around the building and also have guards, does not mean other essential entrances are without locks. There would still be regular maintenance on the physical structures of the gates, door locks, reviewing of policies and background checks of guards, etc.
+Similar here, just because there are network and host security monitoring setup with triggers and actions for alerts defined, the work does not stop here. The organization will have to stay up to date with new vulnerabilities, techniques and regularly reassess whether those triggers and or actions are enough.
+
+This is where a test framework like Atomic Red Team comes in, especially, for organizations that cannot spend a lot of resources around research on vulnerabilities and techniques, can make use of such a test framework to help in developing more security monitoring alert triggers, use cases or to create tests for already deployed triggers to make sure those work as intended regularly.
 
 # Lab Overview
 {{< figure src="/img/lab-example.png" >}}
@@ -46,14 +54,14 @@ In this post we will only talk about Atomic Red Team - the library of tests & `I
 * Fedora 34 client as administrator workstation - allowed to connect to the Internet. Main test execution management platform.
 * Windows 10 client - main test execution host.
 {{% alert note %}}
-We used an existing lab we built, which is closed off of from the Internet, so that may not be the most convenient setup as Atomic Red Team downloads certain scripts from the repo for execution, thus not all tests might run properly.
+For this test, an existing lab was reused, which is closed off of from the Internet. This may not have been the most convenient setup as Atomic Red Team downloads certain scripts from the repo for execution, thus not all tests might run properly.
 {{% /alert %}}
 
 # Setting up pre-requisites
-To execute tests remotely from a Linux machine (which we did here), it requires PowerShell core to be installed.[^6]
+To execute tests remotely from a Linux machine (which was done here), it requires PowerShell core to be installed.[^6]
 
 ## Setting up openssh remoting
-We could also use OpenSSH[^7] remoting feature now built-in to Windows. This feature is available in:
+OpenSSH[^7] remoting feature now built-in to Windows can also be used here. This feature is available in:
 * Windows 10
 * Windows Server 2019
 * Windows Server 2022
@@ -73,7 +81,7 @@ $ ssh username@machine-ip
 ```
 
 {{% alert note %}}
-We noticed that if we have a machine that is joined to a domain (otherthan `WORKGROUP`), the way you connect is slightly different. Like so:
+From observation, a machine that is joined to a domain (other than `WORKGROUP`), the way to connect is slightly different. Like so:
 ```bash
 $ ssh domain\\username@machine-ip
 ```
@@ -82,10 +90,10 @@ $ ssh domain\\username@machine-ip
 
 ## PSWSMan module for WinRM PSRemoting on Linux
 {{% alert warning %}}
-We ended up using WinRM remoting as we encountered a problem with using the SSH remoting feature. It may have something to do with passing in the domain with the username and `New-PSSession` not being happy about it.
+In this test, WinRM remoting was used as the author encountered a problem with using the SSH remoting feature. It may have something to do with passing in the domain with the username and `New-PSSession` not being happy about it.
 Although, it works if using plain old `ssh` command as seen above.
 {{% /alert %}}
-To use WinRM remoting feature on Linux, we need to install `PSWSMan` module.[^8]
+To use WinRM remoting feature on Linux, `PSWSMan` module needs to be installed.[^8]
 
 To do so:
 ```bash
@@ -93,7 +101,7 @@ $ sudo pwsh -Command "Install-Module -Name PSWSMan"
 $ sudo pwsh -Command "Install-WSMan"
 ```
 
-Once this is out of our way, we could create a session variable in a PowerShell instance that points to our test execution machine, and start the Atomic Red Team tests.
+Once this is out of the way, a session variable in a PowerShell instance that points to the test execution machine can be created, and start the Atomic Red Team tests.
 ```powershell
 
   # Setting a session in PowerShell
@@ -101,7 +109,7 @@ Once this is out of our way, we could create a session variable in a PowerShell 
 
 ```
 {{% alert note %}}
-If SSH remoting worked, we could create the session as follows:
+If SSH remoting worked, a session can be created as follows:
 ```powershell
   PS> $sess = New-PSSession -HostName testexecutionmachine -UserName username
 ```
@@ -116,9 +124,9 @@ First install the Execution Framework (`Invoke-AtomicTest`) and Atomics folder o
 
 ```
 {{% alert note %}}
-The imported `Invoke-AtomicTest` module will live as long as the current PowerShell session is alive. If we want to load the module on startup, we will need to set that in the [PowerShell profile](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles).
+The imported `Invoke-AtomicTest` module will live as long as the current PowerShell session is alive. Tp load the module on startup, it needs to be set in the [PowerShell profile](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles).
 {{% /alert %}}
-Once installed, we are ready to rock-n-roll.
+Once installed, it is time to rock-n-roll.
 
 {{% alert warning %}}
 The screenshots below are made on a Windows machine, as PowerShell does not seem to display all info when calling via `-ShowDetails` argument on a Linux machine.
@@ -131,7 +139,7 @@ However, here are a few commands to check out the library contents:
 ```
 {{< figure src="/img/invoke-atomictest-example1.png" >}}
 
-Say we wanted to know full details of all the tests related to **T1003 - OS Credential Dumping**[^9], we can do:
+To know the full details of all the tests related to **T1003 - OS Credential Dumping**[^9]:
 ```powershell
 
   PS> Invoke-AtomicTest T1003 -ShowDetails
@@ -139,7 +147,7 @@ Say we wanted to know full details of all the tests related to **T1003 - OS Cred
 ```
 {{< figure src="/img/invoke-atomictest-example2.png" >}}
 
-From the details above, we can see that there are multiple test cases associated with **T1003**, and it also notes the dependencies for running the test. So let's get the dependency for test number #2 - Credential Dumping with NPPSpy.
+From the details above, it shows that there are multiple test cases associated with **T1003**, and it also notes the dependencies for running the test. So let's get the dependency for test number #2 - Credential Dumping with NPPSpy.
 ```powershell
 
   PS> Invoke-AtomicTest T1003 -TestNumbers 2 -GetPrereqs
@@ -157,13 +165,13 @@ After transferring over the dependecy file into `C:\Users\<username>\AppData\Loc
   PS> Invoke-AtomicTest T1003 -Session $sess -TestNumbers 2
 
 ```
-It will do it's magic in the background, and let us know what we need to do next:
+It will do it's magic in the background, and let the user know what needs to be done next:
 {{< figure src="/img/invoke-atomictest-example4.png" >}}
 
-As recommended, we logged out and logged back in, and voilà! Credentials were dumped:
+As recommended, log out and log back in, and voilà! Credentials were dumped:
 {{< figure src="/img/invoke-atomictest-example5.png" >}}
 
-If we are done with the test and want to clean it up, there is also an argument to do so:
+Once the tests are done, it is time to clean it up. There is also an argument to do so:
 ```powershell
 
   PS> Invoke-AtomicTest T1003 -Session $sess -TestNumbers 2 -Cleanp
@@ -173,12 +181,12 @@ Once the clean-up command runs, it will delete the file with credentials at `C:\
 {{< figure src="/img/invoke-atomictest-example6.png" >}}
 
 # Summary
-If it were not for our roundabout way of doing things and just running it on a single VM setup with Internet access allowed, it should have been a bit more smooth sailing.
+If it were not for a roundabout way of doing things and just running it on a single VM setup with Internet access allowed, it should have been a bit more smooth sailing.
 However, all in all, the easy of use combined with the curated list of dependencies needed to accomplish a test is a huge win.
 
-There are not a lot of technologies involved in setting it up either, just copy and paste the commands in the wiki and off we go.
+There are not a lot of technologies involved in setting it up either, just copy and paste the commands in the wiki and it's ready to go.
 
-Next post(s) we will go through a few attack scenarios that require running multiple steps of tests based on Threat Intel report(s), run the tests that correponds to them and understand what the logs tell us.
+Next post(s) will go through a few attack scenarios that require running multiple steps of tests based on Threat Intel report(s), run the tests that correponds to them and understand what the logs tell us.
 
 **_hic sunt dracones (Here be dragons!)_** :dragon:
 
