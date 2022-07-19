@@ -1,8 +1,8 @@
 +++
 # Contact widget.
 widget = "contact"
-active = true
-date = 2016-04-20T00:00:00
+
+headless = true
 
 title = "Contact"
 subtitle = ""
@@ -11,5 +11,20 @@ subtitle = ""
 weight = 70
 
 # Automatically link email and phone?
+[content]
 autolink = true
+email = "mavjs01+blog@gmail.com"
+
+  [[content.contact_links]]
+  icon = "twitter"
+  icon_pack = "fab"
+  name = "mavjs @ twitter"
+  link = "https://twitter.com/@mavjs"
+
+  [[content.contact_links]]
+  icon = "keybase"
+  icon_pack = "fab"
+  name = "mavjs @ keybase"
+  link = "https://keybase.io/mavjs"
+
 +++

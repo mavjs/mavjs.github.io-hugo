@@ -16,9 +16,9 @@ needed to crack the zip.
 
 First we looked at some hints from the challenge creator ;)
 
-{{< tweet 426989036436078592 >}}
+{{< tweet user="boonlia" id="426989036436078592" >}}
 
-{{< tweet 426968851012530176 >}}
+{{< tweet user="boonlia" id="426968851012530176" >}}
 
 
 So, [Beard-0](https://twitter.com/Maxthatsme) looked at a freshly booted VM of the image (since I was lazy + forgot to save the initial snapshot and was already working on another Forensic challenge) and looked at the Temp folder in AppData/Local, there he found a folder name **Rar$DI99.160** inside which had one of the file **"Null final1.pdf"**. From this we looked at known attacks on zip files and found https://en.wikipedia.org/wiki/Known-plaintext_attack

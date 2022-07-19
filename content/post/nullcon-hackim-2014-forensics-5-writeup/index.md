@@ -12,7 +12,7 @@ group called [Glider Swirley](http://gliderswirley.org)
 
 There was a hint for it by one of the organizers.
 
-{{< tweet 427135133129269248 >}}
+{{< tweet user="boonlia" id="427135133129269248" >}}
 
 Since all the forensics challenges were based on 1 VM image, it was already known that the image is Windows 7 SP1 x86, thus the profile to use for volatility - https://code.google.com/p/volatility/ was **Win7SP1x86**. So I acquired the memory dump of the system (MEMORY.DMP)
 

@@ -1,7 +1,0 @@
-# Languages
-#   Create a [language X] block for each language you want, where X is the language ID.
-
-# Configure the English version of the website.
-[en]
-  languageCode = "en-us"
-
