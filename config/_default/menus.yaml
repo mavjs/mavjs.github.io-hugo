@@ -1,0 +1,19 @@
+main:
+  - name: Home
+    url: '#about'
+    weight: 1
+  - name: Posts
+    url: '#posts'
+    weight: 3
+  - name: Photos
+    url: 'https://photos.mavjs.org'
+    weight: 4
+  - name: Projects
+    url: '#projects'
+    weight: 4
+  - name: Contact
+    url: '#contact'
+    weight: 6
+  - name: Disclaimer
+    url: '#disclaimer'
+    weight: 7
