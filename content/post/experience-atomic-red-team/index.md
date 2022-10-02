@@ -8,7 +8,7 @@ authors: []
 tags: []
 categories: []
 date: 2021-10-29T19:08:24+02:00
-lastmod: 2021-10-29T19:08:24+02:00
+lastmod: 2022-10-02T15:09:40+02:00
 featured: false
 draft: false
 
@@ -54,9 +54,9 @@ This is where a test framework like Atomic Red Team comes in, especially, for or
 * RHEL 8 server running Splunk 8 - for centralised logging.
 * Fedora 34 client as administrator workstation - allowed to connect to the Internet. Main test execution management platform.
 * Windows 10 client - main test execution host.
-{{% alert note %}}
+{{< callout note >}}
 For this test, an existing lab was reused, which is closed off of from the Internet. This may not have been the most convenient setup as Atomic Red Team downloads certain scripts from the repo for execution, thus not all tests might run properly.
-{{% /alert %}}
+{{< /callout >}}
 
 # Setting up pre-requisites
 To execute tests remotely from a Linux machine (which was done here), it requires PowerShell core to be installed.[^6]
@@ -76,24 +76,22 @@ Steps to enable:
 
 To connect to the machine, execute:
 ```bash
-
 $ ssh username@machine-ip
-
 ```
 
-{{% alert note %}}
+{{< callout note >}}
 From observation, a machine that is joined to a domain (other than `WORKGROUP`), the way to connect is slightly different. Like so:
-```bash
+```
 $ ssh domain\\username@machine-ip
 ```
-{{% /alert %}}
+{{< /callout >}}
 
 
 ## PSWSMan module for WinRM PSRemoting on Linux
-{{% alert warning %}}
+{{< callout warning >}}
 In this test, WinRM remoting was used as the author encountered a problem with using the SSH remoting feature. It may have something to do with passing in the domain with the username and `New-PSSession` not being happy about it.
 Although, it works if using plain old `ssh` command as seen above.
-{{% /alert %}}
+{{< /callout >}}
 To use WinRM remoting feature on Linux, `PSWSMan` module needs to be installed.[^8]
 
 To do so:
@@ -104,67 +102,55 @@ $ sudo pwsh -Command "Install-WSMan"
 
 Once this is out of the way, a session variable in a PowerShell instance that points to the test execution machine can be created, and start the Atomic Red Team tests.
 ```powershell
-
   # Setting a session in PowerShell
   PS> $sess = New-PSSession -ComputerName testexecutionmachine -Credentials domain\username
-
 ```
-{{% alert note %}}
+{{< callout note >}}
 If SSH remoting worked, a session can be created as follows:
-```powershell
+```
   PS> $sess = New-PSSession -HostName testexecutionmachine -UserName username
 ```
-{{% /alert %}}
+{{< /callout >}}
 
 # Test Execution - the real deal
 First install the Execution Framework (`Invoke-AtomicTest`) and Atomics folder on the test execution management platform:
 ```powershell
-
   IEX (IWR 'https://raw.githubusercontent.com/redcanaryco/invoke-atomicredteam/master/install-atomicredteam.ps1' -UseBasicParsing);
   Install-AtomicRedTeam -getAtomics
-
 ```
-{{% alert note %}}
+{{< callout note >}}
 The imported `Invoke-AtomicTest` module will live as long as the current PowerShell session is alive. Tp load the module on startup, it needs to be set in the [PowerShell profile](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles).
-{{% /alert %}}
+{{< /callout >}}
 Once installed, it is time to rock-n-roll.
 
-{{% alert warning %}}
+{{< callout warning >}}
 The screenshots below are made on a Windows machine, as PowerShell does not seem to display all info when calling via `-ShowDetails` argument on a Linux machine.
-{{% /alert %}}
+{{< /callout >}}
 However, here are a few commands to check out the library contents:
 ```powershell
-
-  PS> Invoke-AtomicTest All -ShowDetailsBrief
-
+PS> Invoke-AtomicTest All -ShowDetailsBrief
 ```
 {{< figure src="/img/invoke-atomictest-example1.png" >}}
 
 To know the full details of all the tests related to **T1003 - OS Credential Dumping**[^9]:
 ```powershell
-
-  PS> Invoke-AtomicTest T1003 -ShowDetails
-
+PS> Invoke-AtomicTest T1003 -ShowDetails
 ```
 {{< figure src="/img/invoke-atomictest-example2.png" >}}
 
 From the details above, it shows that there are multiple test cases associated with **T1003**, and it also notes the dependencies for running the test. So let's get the dependency for test number #2 - Credential Dumping with NPPSpy.
 ```powershell
-
-  PS> Invoke-AtomicTest T1003 -TestNumbers 2 -GetPrereqs
-
+PS> Invoke-AtomicTest T1003 -TestNumbers 2 -GetPrereqs
 ```
 {{< figure src="/img/invoke-atomictest-example3.png" >}}
-{{% alert warning %}}
+{{< callout warning >}}
 In the above figure, the downloading of the prerequisite dependecy failed, as the machine is not allowed to connect to the Internet.
-{{% /alert %}}
+{{< /callout >}}
 
 After transferring over the dependecy file into `C:\Users\<username>\AppData\Local\Temp`, it is finally good to run the test again.
 ```powershell
-  
-  # Executing it remotely now
-  PS> Invoke-AtomicTest T1003 -Session $sess -TestNumbers 2
-
+# Executing it remotely now
+PS> Invoke-AtomicTest T1003 -Session $sess -TestNumbers 2
 ```
 It will do it's magic in the background, and let the user know what needs to be done next:
 {{< figure src="/img/invoke-atomictest-example4.png" >}}
@@ -174,9 +160,7 @@ As recommended, log out and log back in, and voilà! Credentials were dumped:
 
 Once the tests are done, it is time to clean it up. There is also an argument to do so:
 ```powershell
-
-  PS> Invoke-AtomicTest T1003 -Session $sess -TestNumbers 2 -Cleanp
-
+PS> Invoke-AtomicTest T1003 -Session $sess -TestNumbers 2 -Cleanp
 ```
 Once the clean-up command runs, it will delete the file with credentials at `C:\NPPSpy.txt` and the dll which was copied to `C:\Windows\System32\NPPSpy.dll`:
 {{< figure src="/img/invoke-atomictest-example6.png" >}}
