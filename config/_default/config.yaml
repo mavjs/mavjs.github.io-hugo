@@ -8,7 +8,7 @@ defaultContentLanguageInSubdir: false
 removePathAccents: true
 
 # Advanced
-enableGitInfo: false
+enableGitInfo: true
 summaryLength: 30
 paginate: 10
 enableEmoji: true
