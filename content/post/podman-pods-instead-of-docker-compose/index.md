@@ -158,7 +158,7 @@ If all goes well, your containers should come up inside the pod, and the applica
 
 {{< figure src="/img/miniflux-pod-running.png" >}}
 
-From here, you could either generate a kubernetes pod definition[^3] to make it more reusable or systemd unit[^4] files to go togther with your system administration.
+From here, you could either generate a kubernetes pod definition[^3] to make it more reusable or systemd unit[^4] files to go together with your system administration.
 
 ### pod definition
 ```bash
