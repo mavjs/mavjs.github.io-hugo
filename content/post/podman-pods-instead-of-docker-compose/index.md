@@ -76,7 +76,7 @@ Looking again at the example Compose configuration, you will notice that the por
 
 Therefore, for a pod the port is mapped from it, rather than from a container directly. Thus, when you create a pod you also declare the port(s) you want to map to your host.
 
-To understand this better, let's look at the application I used: [miniflux](https://miniflux.app) - a minimalist and opinionated feed reader, to conver their provided [docker installation](https://miniflux.app/docs/installation.html#docker) method in `docker-compose` to using Podman pods.
+To understand this better, let's look at the application I used: [miniflux](https://miniflux.app) - a minimalist and opinionated feed reader, to convert their provided [docker installation](https://miniflux.app/docs/installation.html#docker) method in `docker-compose` to using Podman pods.
 
 The Docker compose configuration for miniflux could look like below:
 ```yaml
@@ -134,21 +134,23 @@ $ podman volume create miniflux-db
 
 Since the `miniflux` container depends on `db`, we will first create the `db` container inside the pod as follows:
 ```bash
-$ podman run --name=db -d --restart always --pod=minifluxapp --volume=miniflux-db:/var/lib/postgresql/data \
+$ podman run --name=db -d --restart always --pod=minifluxapp \
+--volume=miniflux-db:/var/lib/postgresql/data \
 -e POSTGRES_USER=<miniflux-db-admin> \
 -e POSTGRES_PASSWORD=<miniflux-db-password> \
---health-start-period=30s --health-interval=10s \
+--health-start-period=30s \
+--health-interval=10s \
 --health-cmd="CMD-SHELL pg_isready -U miniflux" docker.io/library/postgres:latest
 ```
 
 Now, the `miniflux` container itself:
 ```bash
 $ podman run --name=miniflux -d --restart=always --pod=minifluxapp \
--e DATABASE_URL=postgres://<miniflux-db-admin>:<miniflux-db-admin>@localhost/miniflux?sslmode=disable \
+-e DATABASE_URL=postgres://<db-user>:<db-pass>@localhost/miniflux?sslmode=disable \
 -e RUN_MIGRATIONS=1 \
 -e CREATE_ADMIN=1 \
--e ADMIN_USERNAME=<miniflux-admin> \
--e ADMIN_PASSWORD=<miniflux-admin-pass> \
+-e ADMIN_USERNAME=<admin-user> \
+-e ADMIN_PASSWORD=<admin-pass> \
 --health-cmd="CMD-SHELL /usr/bin/miniflux -healthcheck auto" ghcr.io/miniflux/miniflux:latest
 ```
 
