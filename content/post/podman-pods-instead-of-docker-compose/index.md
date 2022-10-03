@@ -158,6 +158,23 @@ If all goes well, your containers should come up inside the pod, and the applica
 
 {{< figure src="/img/miniflux-pod-running.png" >}}
 
+From here, you could either generate a kubernetes pod definition[^3] to make it more reusable or systemd unit[^4] files to go togther with your system administration.
+
+### pod definition
+```bash
+$ podman generate kube minifluxapp >> minifluxapp.yaml
+```
+
+### systemd units
+```bash
+$ podman generate systemd \
+--container-prefix minifluxapp \
+--pod-prefix minifluxpod \
+--name minifluxapp
+```
+
 [^0]: https://docs.docker.com/compose/
 [^1]: https://docs.podman.io/en/latest/
 [^2]: https://kubernetes.io/docs/concepts/workloads/pods/
+[^3]: https://docs.podman.io/en/latest/markdown/podman-kube-generate.1.html
+[^4]: https://docs.podman.io/en/latest/markdown/podman-generate-systemd.1.html
