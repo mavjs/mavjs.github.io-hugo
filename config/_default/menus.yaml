@@ -5,9 +5,9 @@ main:
   - name: Posts
     url: '#posts'
     weight: 3
-  - name: Photos
-    url: 'https://photos.mavjs.org'
-    weight: 4
+#  - name: Photos
+#    url: 'https://photos.mavjs.org'
+#    weight: 4
   - name: Projects
     url: '#projects'
     weight: 4
