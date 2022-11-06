@@ -37,7 +37,7 @@ Finally, the popularity of Jeklly based Github pages and other static site gener
 # Overview of setup
 I write my blog posts in [Markdown](https://daringfireball.net/projects/markdown/) using a text editor. This allows me to just concentrate on my writing and not get distracted by the view of the contents being rendered.
 
-{{< figure src="/img/blog-setup-flow.png" >}}
+{{< figure src="/img/blog-setup-flow.png" alt="A simple flow diagram of how this blog is built and served to the internet">}}
 
 The `Computer & File System` on the far left represents the computer where I write my posts on, be that my laptop or desktop, or even on Github itself. I write the content and make sure any other contents like pictures are then stored in the right folders.
 
@@ -47,13 +47,13 @@ When the contents get into git, pretty much instantly, Netlify app gets notified
 
 One of the advantages of using Git and its branching model, coupled with a platform like Netlify is that, because this blog was written in a different working branch once the work in progress contents are pushed to it, Netlify will create a preview of the content in its own URL. This way, you can use multi-branch model of Git to create multiple parallel experiments or writing content, while checking how the visuals would look in its final form.
 
-{{< figure src="/img/blog-prod-deploy-preview.png" >}}
+{{< figure src="/img/blog-prod-deploy-preview.png" alt="Netlify's dashboard view showing sections for production and deploy previews" >}}
 
-{{< figure src="/img/blog-deploy-preview.png" >}}
+{{< figure src="/img/blog-deploy-preview.png" alt="A deploy preview's detail page which allows the user to browse to a preview website" >}}
 
 Once you click on the `Open deploy preview` button, it takes you to a URL in a following format: `https://deploy-preview-<pull request number>--<project-name>.netlify.app/` and you can browse the contents as you would on the main live website. :blush:
 
-{{< figure src="/img/blog-preview.png" >}}
+{{< figure src="/img/blog-preview.png" alt="The view of the built and rendered preview website" >}}
 
 What is even better about this setup? It costs nothing, literally 0 EUR were spent on this setup, other than making accounts and using the free tier of each service. :satisfied: :thumbsup: :ok_hand:
 
