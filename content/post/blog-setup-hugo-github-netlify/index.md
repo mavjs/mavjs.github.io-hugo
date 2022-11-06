@@ -41,11 +41,21 @@ I write my blog posts in [Markdown](https://daringfireball.net/projects/markdown
 
 The `Computer & File System` on the far left represents the computer where I write my posts on, be that my laptop or desktop, or even on Github itself. I write the content and make sure any other contents like pictures are then stored in the right folders.
 
-Once I am somewhat satisfied with my work, I push out the contents to my [Git](https://git-scm.com/) repository. This allows me to revert/rollback my changes if I ever need to, create different branches for the contents or theme changes in its own branches in order for the main blog on `mavjs.org` to not be effected. You could call this modern day DevOps style blogging. :smile:
+Once I am somewhat satisfied with my work, I push out the contents to my [Git](https://git-scm.com/) repository which is hosted on [Github][https://github.com/]. This allows me to revert/rollback my changes if I ever need to, create different branches for the contents or theme changes in its own branches in order for the main blog on `mavjs.org` to not be effected. You could call this modern day DevOps style blogging. :smile:
 
 When the contents get into git, pretty much instantly, Netlify app gets notified to build the site, and then makes the resulting built contents available on `mavjs.org` using its content delivery network. Netlify internally uses a Ubuntu Linux container with hugo in the background to create the build.
 
 One of the advantages of using Git and its branching model, coupled with a platform like Netlify is that, because this blog was written in a different working branch once the work in progress contents are pushed to it, Netlify will create a preview of the content in its own URL. This way, you can use multi-branch model of Git to create multiple parallel experiments or writing content, while checking how the visuals would look in its final form.
+
+{{< figure src="/img/blog-prod-deploy-preview.png" >}}
+
+{{< figure src="/img/blog-deploy-preview.png" >}}
+
+Once you click on the `Open deploy preview` button, it takes you to a URL in a following format: `https://deploy-preview-<pull request number>--<project-name>.netlify.app/` and you can browse the contents as you would on the main live website. :blush:
+
+{{< figure src="/img/blog-preview.png" >}}
+
+What is even better about this setup? It costs nothing, literally 0 EUR were spent on this setup, other than making accounts and using the free tier of each service. :satisfied: :thumbsup: :ok_hand:
 
 [^0]: https://mavjs.blogspot.com/2011/12/hello-world_4159.html
 [^1]: Of course, that also invovled lots of Linux distribution (or as the cool kids say: distro) hopping from Ubuntu to Arch Linux, back to Ubuntu and then finally landing on Fedora since then. :laughing:
