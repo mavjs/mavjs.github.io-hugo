@@ -30,9 +30,9 @@ projects: []
 ---
 I have had this website / blog (going forward it shall be, _the_ blog) on this current setup since about 2016, it has not always been a smooth ride. Always tinkering, always messing around with it when I do feel like it. However, I have enjoyed writing them.
 
-The oldest post[^0] was first written back in 2011 on blogspot.com (called: **FLOSS Bytes**) , right around the time I got into Linux[^1] and open source communities. However, I wanted to move away from the clunky user interface of blogspot, which also included, as far as I remember, very difficult in themeing. I was also very sold on the idea of a static site generator and hosting my own website, back then.
+The oldest post[^0] was first written back in 2011 on blogspot.com (called: **FLOSS Bytes**) , right around the time I got into Linux[^1] and open source communities. However, I wanted to move away from the clunky user interface of blogspot, which also included, as far as I remember, very difficult in theming. I was also very sold on the idea of a static site generator and hosting my own website, back then.
 
-Finally, the popularity of Jeklly based Github pages and other static site generator tools like [Hugo](https://gohugo.io/) pushed me to persue that route. The only requirement back then was for the setup to use a static site generator and not a content management system (CMS)[^2].
+Finally, the popularity of Jeklly based Github pages and other static site generator tools like [Hugo](https://gohugo.io/) pushed me to pursue that route. The only requirement back then was for the setup to use a static site generator and not a content management system (CMS)[^2].
 
 # Overview of setup
 I write my blog posts in [Markdown](https://daringfireball.net/projects/markdown/) using a text editor. This allows me to just concentrate on my writing and not get distracted by the view of the contents being rendered.
@@ -44,6 +44,8 @@ The `Computer & File System` on the far left represents the computer where I wri
 Once I am somewhat satisfied with my work, I push out the contents to my [Git](https://git-scm.com/) repository. This allows me to revert/rollback my changes if I ever need to, create different branches for the contents or theme changes in its own branches in order for the main blog on `mavjs.org` to not be effected. You could call this modern day DevOps style blogging. :smile:
 
 When the contents get into git, pretty much instantly, Netlify app gets notified to build the site, and then makes the resulting built contents available on `mavjs.org` using its content delivery network. Netlify internally uses a Ubuntu Linux container with hugo in the background to create the build.
+
+One of the advantages of using Git and its branching model, coupled with a platform like Netlify is that, because this blog was written in a different working branch once the work in progress contents are pushed to it, Netlify will create a preview of the content in its own URL. This way, you can use multi-branch model of Git to create multiple parallel experiments or writing content, while checking how the visuals would look in its final form.
 
 [^0]: https://mavjs.blogspot.com/2011/12/hello-world_4159.html
 [^1]: Of course, that also invovled lots of Linux distribution (or as the cool kids say: distro) hopping from Ubuntu to Arch Linux, back to Ubuntu and then finally landing on Fedora since then. :laughing:
