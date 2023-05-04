@@ -44,6 +44,9 @@ social:
 - icon: linkedin
   icon_pack: fab
   link: https://linkedin.com/in/mavjs
+- icon: mastodon
+  icon_pack: fab
+  link: https://infosec.exchange/@mavjs
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
