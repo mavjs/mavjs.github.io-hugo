@@ -22,6 +22,12 @@ email = "mavjs01+blog@gmail.com"
   link = "https://twitter.com/@mavjs"
 
   [[content.contact_links]]
+  icon = "mastodon"
+  icon_pack = "fab"
+  name = "mavjs @ infosec.exchange"
+  link = "https://infosec.exchange/@mavjs"
+
+  [[content.contact_links]]
   icon = "keybase"
   icon_pack = "fab"
   name = "mavjs @ keybase"
