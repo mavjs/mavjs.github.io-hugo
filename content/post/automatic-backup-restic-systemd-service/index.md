@@ -119,7 +119,7 @@ The `offsite-backup.timer` would be:
 Description=Offsite backup with restic
 
 [Timer]
-Oncalendar=daily UTC
+OnCalendar=daily UTC
 Persistent=true
 RandomizedDelaySec=300
 
