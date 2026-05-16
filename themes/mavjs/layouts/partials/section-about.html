@@ -5,19 +5,29 @@
   <div class="container">
     <div class="about-grid">
 
-      <!-- Profile column: avatar, name, role, social -->
+      <!-- Left: avatar with rotating ring -->
       <div class="about-profile">
         {{- $avatar := $author.Resources.GetMatch "avatar*" }}
         {{- if $avatar }}
           {{- $img := $avatar.Fill "400x400 webp" }}
-          <img class="about-avatar"
-               src="{{ $img.RelPermalink }}"
-               alt="{{ $author.Title }}"
-               width="180" height="180">
+          <div class="avatar-wrap">
+            <div class="avatar-ring" aria-hidden="true"></div>
+            <div class="avatar-ring-inner" aria-hidden="true"></div>
+            <img class="about-avatar"
+                 src="{{ $img.RelPermalink }}"
+                 alt="{{ $author.Title }}"
+                 width="188" height="188">
+          </div>
         {{- end }}
-        <h2 class="about-name">{{ $author.Title }}</h2>
+      </div>
+
+      <!-- Right: name, role, social, bio, meta -->
+      <div class="about-content">
+        <h1 class="about-content-name">{{ $author.Title }}</h1>
+
         {{- $roles := $author.Params.roles | default (slice $author.Params.role) }}
         <p class="about-role" data-roles="{{ $roles | jsonify }}">{{ index $roles 0 }}</p>
+
         {{- with $author.Params.social }}
         <ul class="social-links" aria-label="Social links">
           {{- range . }}
@@ -32,10 +42,9 @@
           {{- end }}
         </ul>
         {{- end }}
-      </div>
 
-      <!-- Content column: bio, interests, education -->
-      <div class="about-content">
+        <div class="about-divider" aria-hidden="true"></div>
+
         {{- with $author.Content }}
         <div class="about-bio">{{ . }}</div>
         {{- end }}

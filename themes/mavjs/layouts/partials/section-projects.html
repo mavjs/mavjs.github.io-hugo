@@ -18,10 +18,12 @@
             {{- $img := .Resources.GetMatch "featured*" }}
             {{- if $img }}
               {{- $thumb := $img.Resize "600x webp" }}
-              <img class="project-card-img"
-                   src="{{ $thumb.RelPermalink }}"
-                   alt="{{ .Title }}"
-                   loading="lazy">
+              <div class="project-card-img-wrap">
+                <img class="project-card-img"
+                     src="{{ $thumb.RelPermalink }}"
+                     alt="{{ .Title }}"
+                     loading="lazy">
+              </div>
             {{- end }}
             <div class="project-card-body">
               <div class="project-card-title">{{ .Title }}</div>

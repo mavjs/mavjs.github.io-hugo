@@ -2,6 +2,7 @@
 <div class="list-wrap">
   <header class="list-header">
     <h1 class="list-title">{{ .Title | default "Posts" }}</h1>
+    <span class="list-count">{{ len .Pages }} entries</span>
   </header>
 
   <div class="post-list-full">
@@ -16,13 +17,13 @@
              loading="lazy">
       {{- end }}
       <div class="post-list-body">
+        <div class="post-list-date">{{ .Date.Format "Jan 2006" }}</div>
         <div class="post-list-title">{{ .Title }}</div>
         {{- with .Summary }}
         <div class="post-list-summary">{{ . | plainify }}</div>
         {{- end }}
         <div class="post-list-meta">
-          {{ .Date.Format "Mon, Jan 2, 2006" }}
-          {{- if gt .ReadingTime 0 }} · {{ .ReadingTime }}m read{{ end }}
+          {{- if gt .ReadingTime 0 }}{{ .ReadingTime }}m read{{- end }}
         </div>
       </div>
     </a>
