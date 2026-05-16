@@ -11,6 +11,13 @@ superuser: true
 
 role: IT Security Enthusiast
 
+roles:
+  - IT Security Enthusiast
+  - Penetration Test
+  - Red Team
+  - Threat Research
+  - Threat Detection
+
 # Short bio (displayed in user profile at end of posts)
 bio: Ye Myat **"Maverick"** Kaung is a highly motivated individual with a passion for security and open source software. Also an aspiring hacker and software engineer.
 

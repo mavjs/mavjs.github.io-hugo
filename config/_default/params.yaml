@@ -1,64 +1,30 @@
-# SITE SETUP
-# Guide: https://wowchemy.com/docs/getting-started/
-# Documentation: https://wowchemy.com/docs/
-# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
+# Site identity
+description: "IT Security Enthusiast"
+author: "Maverick Kaung"
+twitter: mavjs
 
-# Appearance
+# Primary author slug (matches content/authors/<slug>/)
+primary_author: admin
 
-appearance:
-  theme_day: dark
-  theme_night: dark
-  font: dark
-  font_size: M
+# Footer copyright — {year} is replaced at build time
+copyright: '© {year} Ye Myat "Maverick" Kaung.'
 
-# SEO
+# Contact section
+contact:
+  email: mavjs01+blog@gmail.com
+  links:
+    - icon: twitter
+      icon_pack: fab
+      name: mavjs @ twitter
+      url: https://twitter.com/@mavjs
+    - icon: mastodon
+      icon_pack: fab
+      name: mavjs @ infosec.exchange
+      url: https://infosec.exchange/@mavjs
+    - icon: keybase
+      icon_pack: fab
+      name: mavjs @ keybase
+      url: https://keybase.io/mavjs
 
-marketing:
-  seo:
-    site_type: Person
-    twitter: 'mavjs'
-
-# Site header
-
-header:
-  navbar:
-    enable: true
-    align: r
-    show_logo: true
-    show_language: false
-    show_day_night: true
-    show_search: true
-    highlight_active_link: true
-
-# Site footer
-
-footer:
-  copyright:
-    notice: "© {year} Ye Myat \"Maverick\" Kaung.<br />This work is licensed under {license}"
-    license:
-      enable: true
-      allow_derivatives: true
-      share_alike: true
-      allow_commercial: false
-
-# Localization
-
-locale:
-  date_format: 'Mon, Jan 2, 2006'
-  time_format: '15:04'
-  address_format: en-us
-
-# Site features
-
-features:
-  syntax_highlighter:
-    extra_languages:
-      - python
-      - yaml
-      - go
-      - rust
-# Extensions
-
-extensions:
-  academicons:
-    enable: true
+# Disclaimer section
+disclaimer: "The opinions expressed on this site are mine alone and do not necessarily reflect the opinions or strategies of my past, present and future employers."

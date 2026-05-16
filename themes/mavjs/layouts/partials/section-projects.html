@@ -1,0 +1,47 @@
+{{- $projects := where site.RegularPages "Section" "project" }}
+{{- if $projects }}
+<section id="projects" class="home-section">
+  <div class="container">
+    <div class="section-grid">
+
+      <div class="section-heading">
+        <h2>Projects</h2>
+      </div>
+
+      <div>
+        <div class="projects-grid">
+          {{- range $projects }}
+          {{- $link := .Params.external_link | default .RelPermalink }}
+          <a class="project-card"
+             href="{{ $link }}"
+             {{- if .Params.external_link }} target="_blank" rel="noopener"{{ end }}>
+            {{- $img := .Resources.GetMatch "featured*" }}
+            {{- if $img }}
+              {{- $thumb := $img.Resize "600x webp" }}
+              <img class="project-card-img"
+                   src="{{ $thumb.RelPermalink }}"
+                   alt="{{ .Title }}"
+                   loading="lazy">
+            {{- end }}
+            <div class="project-card-body">
+              <div class="project-card-title">{{ .Title }}</div>
+              {{- with .Params.summary }}
+              <div class="project-card-summary">{{ . }}</div>
+              {{- end }}
+              {{- with .Params.tags }}
+              <div class="project-card-tags">
+                {{- range . }}
+                <span class="tag">{{ . }}</span>
+                {{- end }}
+              </div>
+              {{- end }}
+            </div>
+          </a>
+          {{- end }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{{- end }}

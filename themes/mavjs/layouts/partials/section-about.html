@@ -1,0 +1,77 @@
+{{- $authorSlug := site.Params.primary_author | default "admin" -}}
+{{- $author := site.GetPage (printf "/authors/%s" $authorSlug) -}}
+{{- if $author }}
+<section id="about" class="home-section">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- Profile column: avatar, name, role, social -->
+      <div class="about-profile">
+        {{- $avatar := $author.Resources.GetMatch "avatar*" }}
+        {{- if $avatar }}
+          {{- $img := $avatar.Fill "400x400 webp" }}
+          <img class="about-avatar"
+               src="{{ $img.RelPermalink }}"
+               alt="{{ $author.Title }}"
+               width="180" height="180">
+        {{- end }}
+        <h2 class="about-name">{{ $author.Title }}</h2>
+        {{- $roles := $author.Params.roles | default (slice $author.Params.role) }}
+        <p class="about-role" data-roles="{{ $roles | jsonify }}">{{ index $roles 0 }}</p>
+        {{- with $author.Params.social }}
+        <ul class="social-links" aria-label="Social links">
+          {{- range . }}
+          <li>
+            <a href="{{ .link }}"
+               target="_blank"
+               rel="noopener me"
+               aria-label="{{ .icon }}">
+              <i class="{{ .icon_pack }} fa-{{ .icon }}" aria-hidden="true"></i>
+            </a>
+          </li>
+          {{- end }}
+        </ul>
+        {{- end }}
+      </div>
+
+      <!-- Content column: bio, interests, education -->
+      <div class="about-content">
+        {{- with $author.Content }}
+        <div class="about-bio">{{ . }}</div>
+        {{- end }}
+
+        <div class="about-meta">
+          {{- with $author.Params.interests }}
+          <div>
+            <div class="meta-heading">Interests</div>
+            <ul class="interests-list">
+              {{- range . }}
+              <li>{{ . }}</li>
+              {{- end }}
+            </ul>
+          </div>
+          {{- end }}
+
+          {{- with $author.Params.education.courses }}
+          <div>
+            <div class="meta-heading">Education</div>
+            <ul class="education-list">
+              {{- range . }}
+              <li>
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                <div>
+                  <div class="edu-course">{{ .course }}, {{ .year }}</div>
+                  <div class="edu-institution">{{ .institution }}</div>
+                </div>
+              </li>
+              {{- end }}
+            </ul>
+          </div>
+          {{- end }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{{- end }}

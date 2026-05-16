@@ -1,0 +1,17 @@
+{{- with site.Params.disclaimer }}
+<section id="disclaimer" class="home-section">
+  <div class="container">
+    <div class="section-grid">
+
+      <div class="section-heading">
+        <h2>Disclaimer</h2>
+      </div>
+
+      <div>
+        <p class="disclaimer-text">{{ . }}</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+{{- end }}

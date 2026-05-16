@@ -1,0 +1,52 @@
+{{ define "main" }}
+<div class="single-wrap">
+  {{- $backURL := cond (eq .Section "post") ("/post/" | relURL) ("/" | relURL) }}
+  {{- $backLabel := cond (eq .Section "post") "All posts" "Home" }}
+  <a href="{{ $backURL }}" class="back-link">
+    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+    {{ $backLabel }}
+  </a>
+
+  <div class="single-inner">
+    <header class="post-header">
+      <h1 class="post-title">{{ .Title }}</h1>
+      <div class="post-meta-line">
+        <span>{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+        {{- if gt .ReadingTime 0 }}
+        <span>·</span>
+        <span>{{ .ReadingTime }} min read</span>
+        {{- end }}
+      </div>
+      {{- with .Params.tags }}
+      <div class="post-tags-line">
+        {{- range . }}
+        <a href="{{ printf "/tag/%s/" (. | urlize) | relURL }}" class="tag">#{{ . }}</a>
+        {{- end }}
+      </div>
+      {{- end }}
+    </header>
+
+    {{- $featured := .Resources.GetMatch "featured*" }}
+    {{- $previewOnly := false }}
+    {{- with .Params.image }}{{ $previewOnly = .preview_only }}{{ end }}
+    {{- if and $featured (not $previewOnly) }}
+      {{- $img := $featured.Resize "1200x webp" }}
+      <img class="featured-image"
+           src="{{ $img.RelPermalink }}"
+           alt="{{ .Title }}"
+           loading="lazy">
+    {{- end }}
+
+    {{- with .Params.external_link }}
+    <a href="{{ . }}" target="_blank" rel="noopener" class="external-link-cta">
+      <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+      View project
+    </a>
+    {{- end }}
+
+    <div class="post-content">
+      {{ .Content }}
+    </div>
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,19 @@
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="navbar-inner">
+    <a class="navbar-brand" href="{{ "/" | relURL }}">{{ site.Title }}</a>
+    <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+    <ul class="navbar-nav" role="list">
+      {{- range site.Menus.main }}
+      {{- $url := .URL }}
+      {{- if hasPrefix $url "#" }}
+        {{- $url = printf "/#%s" (strings.TrimPrefix "#" $url) }}
+      {{- end }}
+      <li role="listitem">
+        <a href="{{ $url }}">{{ .Name }}</a>
+      </li>
+      {{- end }}
+    </ul>
+  </div>
+</nav>
