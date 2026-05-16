@@ -340,18 +340,34 @@ body { counter-reset: snum; }
   margin-bottom: 0.875rem;
 }
 
-.about-role {
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  color: var(--green);
-  border-right: 2px solid var(--green);
-  padding-right: 2px;
-  display: inline-block;
-  line-height: 1.5;
+.about-role-wrap {
+  position: relative;
   height: 1.5em;
+  font-size: 0.8125rem;
+  line-height: 1.5;
   margin-bottom: 1.125rem;
+  overflow: hidden;
 }
-.about-role.cursor-done { border-right: none; }
+
+.about-role {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--font-mono);
+  color: var(--green);
+  white-space: nowrap;
+}
+
+.about-role::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 0.85em;
+  background: var(--green);
+  vertical-align: text-bottom;
+  margin-left: 1px;
+}
+.about-role.cursor-done::after { display: none; }
 
 .social-links {
   display: flex;
@@ -458,7 +474,7 @@ body { counter-reset: snum; }
 }
 .about-profile        { animation: fade-up 0.65s ease both; animation-delay: 0.05s; }
 .about-content-name   { animation: fade-up 0.65s ease both; animation-delay: 0.15s; }
-.about-role           { animation: fade-up 0.65s ease both; animation-delay: 0.25s; }
+.about-role-wrap      { animation: fade-up 0.65s ease both; animation-delay: 0.25s; }
 .social-links         { animation: fade-up 0.65s ease both; animation-delay: 0.33s; }
 .about-bio            { animation: fade-up 0.65s ease both; animation-delay: 0.4s;  }
 .about-meta           { animation: fade-up 0.65s ease both; animation-delay: 0.48s; }

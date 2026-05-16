@@ -26,7 +26,9 @@
         <h1 class="about-content-name">{{ $author.Title }}</h1>
 
         {{- $roles := $author.Params.roles | default (slice $author.Params.role) }}
-        <p class="about-role" data-roles="{{ $roles | jsonify }}">{{ index $roles 0 }}</p>
+        <div class="about-role-wrap">
+          <p class="about-role" data-roles="{{ $roles | jsonify }}">{{ index $roles 0 }}</p>
+        </div>
 
         {{- with $author.Params.social }}
         <ul class="social-links" aria-label="Social links">
