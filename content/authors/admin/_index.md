@@ -17,9 +17,6 @@ roles:
   - Red Team Operator
   - Cybersecurity Practitioner
 
-# Short bio (displayed in user profile at end of posts)
-bio: Ye Myat **"Maverick"** Kaung is a highly motivated individual with a passion for security and open source software. Also an aspiring hacker and software engineer.
-
 interests:
 - Threat Detection/Hunting
 - Cyber Security
@@ -70,4 +67,4 @@ email: ""
 ---
 Ye Myat **"Maverick"** Kaung is a highly motivated individual with a passion for
 security and open source software. Also an aspiring hacker and software
-engineer.
+engineer. Has a decade of experience in Security Monitoring, Threat Detection/Hunting and Red Team Operations.
