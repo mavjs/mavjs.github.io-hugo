@@ -14,8 +14,10 @@ role: IT Security Enthusiast
 roles:
   - IT Security Enthusiast
   - Ethical Hacker
-  - Red Team Operator
   - Cybersecurity Practitioner
+  - Threat Hunter
+  - Red Team Operator
+  - Threat Detection Engineer
 
 interests:
 - Threat Detection/Hunting
