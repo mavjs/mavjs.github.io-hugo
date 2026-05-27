@@ -109,7 +109,9 @@
         role.textContent = current.slice(0, charIdx);
         if (charIdx === 0) {
           deleting = false;
-          roleIdx = (roleIdx + 1) % roles.length;
+          var next;
+          do { next = Math.random() * roles.length | 0; } while (next === roleIdx && roles.length > 1);
+          roleIdx = next;
           setTimeout(tick, PAUSE_GAP);
           return;
         }
