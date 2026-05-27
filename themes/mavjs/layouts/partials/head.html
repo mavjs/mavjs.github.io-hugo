@@ -1,0 +1,49 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Hugo {{ hugo.Version }}">
+
+{{- $title := cond .IsHome site.Title (printf "%s | %s" .Title site.Title) }}
+<title>{{ $title }}</title>
+
+{{- $desc := .Description | default site.Params.description | default "" }}
+<meta name="description" content="{{ $desc }}">
+<meta name="author" content="{{ site.Params.author | default site.Title }}">
+
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{- range .AlternativeOutputFormats }}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}">
+{{- end }}
+
+<!-- Fonts: Bebas Neue (display) · DM Sans (body) · Fira Code (mono) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Font Awesome 6 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" crossorigin="anonymous">
+
+<!-- Theme CSS -->
+<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+
+<!-- Favicon -->
+{{- $icon := resources.Get "media/icon.png" }}
+{{- if $icon }}
+<link rel="icon" type="image/png" href="{{ $icon.RelPermalink }}">
+{{- end }}
+
+<!-- Open Graph -->
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary">
+{{- with site.Params.twitter }}
+<meta name="twitter:site" content="@{{ . }}">
+<meta name="twitter:creator" content="@{{ . }}">
+{{- end }}
+
+<!-- Site-level head hooks (Mastodon rel=me, etc.) -->
+{{- partial "hooks/head-end/custom.html" . -}}

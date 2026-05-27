@@ -1,0 +1,11 @@
+name = "mavjs"
+license = "MIT"
+description = "Custom personal theme for mavjs.org — dark, minimal, no framework dependencies."
+homepage = "https://mavjs.org"
+tags = ["personal", "blog", "portfolio", "dark"]
+features = ["blog", "portfolio"]
+min_version = "0.104.0"
+
+[author]
+  name = "Maverick Kaung"
+  homepage = "https://mavjs.org"

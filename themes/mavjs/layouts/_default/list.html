@@ -1,0 +1,33 @@
+{{ define "main" }}
+<div class="list-wrap">
+  <header class="list-header">
+    <h1 class="list-title">{{ .Title | default "Posts" }}</h1>
+    <span class="list-count">{{ len .Pages }} entries</span>
+  </header>
+
+  <div class="post-list-full">
+    {{- range .Pages }}
+    <a class="post-list-item" href="{{ .RelPermalink }}">
+      {{- $thumb := .Resources.GetMatch "featured*" }}
+      {{- if $thumb }}
+        {{- $t := $thumb.Resize "320x webp" }}
+        <img class="post-list-thumb"
+             src="{{ $t.RelPermalink }}"
+             alt=""
+             loading="lazy">
+      {{- end }}
+      <div class="post-list-body">
+        <div class="post-list-date">{{ .Date.Format "Jan 2006" }}</div>
+        <div class="post-list-title">{{ .Title }}</div>
+        {{- with .Summary }}
+        <div class="post-list-summary">{{ . | plainify }}</div>
+        {{- end }}
+        <div class="post-list-meta">
+          {{- if gt .ReadingTime 0 }}{{ .ReadingTime }}m read{{- end }}
+        </div>
+      </div>
+    </a>
+    {{- end }}
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,34 @@
+{{- with site.Params.contact }}
+<section id="contact" class="home-section">
+  <div class="container">
+    <div class="section-grid">
+
+      <div class="section-heading">
+        <h2>Contact</h2>
+      </div>
+
+      <div>
+        <ul class="contact-list">
+          {{- with .email }}
+          <li>
+            <span class="contact-icon">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+            </span>
+            <a href="mailto:{{ . }}">{{ . }}</a>
+          </li>
+          {{- end }}
+          {{- range .links }}
+          <li>
+            <span class="contact-icon">
+              <i class="{{ .icon_pack }} fa-{{ .icon }}" aria-hidden="true"></i>
+            </span>
+            <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
+          </li>
+          {{- end }}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+{{- end }}

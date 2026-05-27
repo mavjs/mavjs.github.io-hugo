@@ -1,0 +1,11 @@
+{{- $user := .Get 0 -}}
+{{- $id   := .Get 1 -}}
+<blockquote class="tweet-embed">
+  <p>
+    <a href="https://twitter.com/{{ $user }}/status/{{ $id }}"
+       target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-twitter" aria-hidden="true"></i>
+      View tweet by @{{ $user }}
+    </a>
+  </p>
+</blockquote>

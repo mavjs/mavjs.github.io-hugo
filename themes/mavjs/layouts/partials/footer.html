@@ -1,0 +1,17 @@
+<footer class="site-footer">
+  <div class="container">
+    {{- with site.Params.copyright }}
+    <p class="footer-copyright">
+      {{- . | replaceRE `\{year\}` (now.Year | string) | safeHTML -}}
+    </p>
+    {{- end }}
+    <p class="footer-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0" target="_blank" rel="noopener noreferrer" aria-label="Creative Commons BY-NC-SA 4.0">
+        <i class="fab fa-creative-commons" aria-hidden="true"></i>
+        <i class="fab fa-creative-commons-by" aria-hidden="true"></i>
+        <i class="fab fa-creative-commons-nc" aria-hidden="true"></i>
+        <i class="fab fa-creative-commons-sa" aria-hidden="true"></i>
+      </a>
+    </p>
+  </div>
+</footer>

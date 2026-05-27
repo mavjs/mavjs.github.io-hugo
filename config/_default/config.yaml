@@ -1,5 +1,6 @@
 title: Maverick Kaung
 baseurl: 'https://www.mavjs.org/'
+theme: mavjs
 
 ## Language
 defaultContentLanguage: en
@@ -25,14 +26,11 @@ permalinks:
   authors: '/author/:slug/'
   tags: '/tag/:slug/'
   categories: '/category/:slug/'
-  publication_types: '/publication-type/:slug/'
 disableAliases: true
 outputs:
   home:
     - HTML
     - RSS
-    - JSON
-    - WebAppManifest
   section:
     - HTML
     - RSS
@@ -44,7 +42,6 @@ timeout: 600000
 taxonomies:
   tag: tags
   category: categories
-  publication_type: publication_types
   author: authors
 related:
   threshold: 80
@@ -61,11 +58,11 @@ related:
       weight: 70
     - name: authors
       weight: 20
-module:
-  imports:
-    - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy/v5
-security:
-  funcs:
-    getenv:
-      - ^HUGO_
-      - ^WC_
+markup:
+  highlight:
+    style: dracula
+    noClasses: true
+    lineNos: false
+  goldmark:
+    renderer:
+      unsafe: true
